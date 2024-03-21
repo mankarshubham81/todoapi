@@ -1,6 +1,7 @@
 import express  from "express";
 import {config} from "dotenv"
 import ToDouserRoute from "./routes/user.js"
+import cookieParser from "cookie-parser";
 
 export const app = express();
 
@@ -8,9 +9,12 @@ config({
     path: "./data/config.env",
 })
 
-// middlewares
+// using middlewares
 app.use(express.json())
-app.use("/user", ToDouserRoute)
+app.use(cookieParser())
+
+// Using Routes
+app.use("/api/v1/users", ToDouserRoute)
 
 
 
