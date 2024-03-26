@@ -2,6 +2,7 @@ import { ToDoUser } from './../models/user.js';
 import bcrypt from 'bcrypt';
 // import jwt from "jsonwebtoken"
 import { sendCookie } from '../utils/features.js';
+import CustomErrorHandler from '../middlewares/error.js'
 
 export const getAllUsers = async (req,res) => {
     
